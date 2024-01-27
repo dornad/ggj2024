@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=3 format=3 uid="uid://b806padjpiciv"]
+
+[ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
+[ext_resource type="Texture2D" uid="uid://c8uwdn1dgvyob" path="res://Assets/character_placeholder.png" id="2_1at67"]
 
 [node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(963.558, 541.613)
+scale = Vector2(1.24537, 1.04958)
+texture = ExtResource("1_0r6ef")
+
+[node name="CharacterPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(344, 685)
+scale = Vector2(0.57109, 0.72468)
+texture = ExtResource("2_1at67")
