@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=15 format=3 uid="uid://b806padjpiciv"]
 
 [ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="2_7lcpd"]
+[ext_resource type="AudioStream" uid="uid://dc4wvymlx7fb3" path="res://Assets/Audio/deep_voice_Robbing.wav" id="3_dg6ly"]
 [ext_resource type="Script" path="res://Scripts/DragAndDropArea.gd" id="3_kr7bl"]
 [ext_resource type="Texture2D" uid="uid://cq4v3q8rclne0" path="res://Assets/Bus driver_Transparent.png" id="3_xgl8w"]
 [ext_resource type="Script" path="res://Scripts/Draggable.gd" id="4_nctbg"]
+[ext_resource type="AudioStream" uid="uid://0nu4sll4njqx" path="res://Assets/Audio/Mickey_Robbed.wav" id="4_vaiej"]
 [ext_resource type="Texture2D" uid="uid://dl6tm6lls3ive" path="res://Assets/Executive 2_transparent.png" id="5_0splw"]
 [ext_resource type="Texture2D" uid="uid://b3w2y0wtg3eg5" path="res://icon.svg" id="5_l0xcf"]
 [ext_resource type="Texture2D" uid="uid://fa6j63lg5vm8" path="res://Assets/Mechanic_ transparent.png" id="6_irn4i"]
@@ -28,6 +30,9 @@ texture = ExtResource("1_0r6ef")
 position = Vector2(108, 167)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
+normal_voice = ExtResource("3_dg6ly")
+mask_voice = ExtResource("4_vaiej")
+pain_voice = ExtResource("4_vaiej")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character"]
 position = Vector2(299, 648)
@@ -45,6 +50,22 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="Button Action 1" type="Button" parent="Character"]
+offset_left = 198.494
+offset_top = 844.979
+offset_right = 256.494
+offset_bottom = 875.979
+scale = Vector2(2.92665, 2.92665)
+text = "Action"
+
+[node name="Button Action 2" type="Button" parent="Character"]
+offset_left = 184.71
+offset_top = 992.471
+offset_right = 255.71
+offset_bottom = 1023.47
+scale = Vector2(2.92665, 2.92665)
+text = "Action 2"
 
 [node name="Character2" type="Node2D" parent="."]
 position = Vector2(700, 127)
@@ -67,6 +88,22 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="Button Action 1" type="Button" parent="Character2"]
+offset_left = -220.549
+offset_top = 858.763
+offset_right = -162.549
+offset_bottom = 889.763
+scale = Vector2(2.92665, 2.92665)
+text = "Action"
+
+[node name="Button Action 2" type="Button" parent="Character2"]
+offset_left = -238.469
+offset_top = 1009.01
+offset_right = -167.469
+offset_bottom = 1040.01
+scale = Vector2(2.92665, 2.92665)
+text = "Action 2"
 
 [node name="Character3" type="Node2D" parent="."]
 position = Vector2(1149, 173)
@@ -91,6 +128,22 @@ offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
 
+[node name="Button Action 1" type="Button" parent="Character3"]
+offset_left = 525.293
+offset_top = 652.547
+offset_right = 583.293
+offset_bottom = 683.547
+scale = Vector2(2.92665, 2.92665)
+text = "Action"
+
+[node name="Button Action 2" type="Button" parent="Character3"]
+offset_left = 506.057
+offset_top = 813.835
+offset_right = 577.057
+offset_bottom = 844.835
+scale = Vector2(2.92665, 2.92665)
+text = "Action 2"
+
 [node name="Character4" type="Node2D" parent="."]
 position = Vector2(761, 111)
 scale = Vector2(0.725462, 0.725462)
@@ -114,6 +167,22 @@ offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
 
+[node name="Button Action 1" type="Button" parent="Character4"]
+offset_left = 181.953
+offset_top = 886.332
+offset_right = 239.953
+offset_bottom = 917.332
+scale = Vector2(2.92665, 2.92665)
+text = "Action"
+
+[node name="Button Action 2" type="Button" parent="Character4"]
+offset_left = 164.034
+offset_top = 1036.58
+offset_right = 235.034
+offset_bottom = 1067.58
+scale = Vector2(2.92665, 2.92665)
+text = "Action 2"
+
 [node name="Character5" type="Node2D" parent="."]
 position = Vector2(1055, 102)
 scale = Vector2(0.725462, 0.725462)
@@ -125,7 +194,7 @@ scale = Vector2(1.3572, 1.3572)
 texture = ExtResource("8_7na4d")
 
 [node name="DragAndDropArea" type="StaticBody2D" parent="Character5" groups=["droppable"]]
-position = Vector2(275.686, 249.496)
+position = Vector2(217.792, 318.418)
 script = ExtResource("3_kr7bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character5/DragAndDropArea"]
@@ -136,6 +205,22 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="Button Action 3" type="Button" parent="Character5"]
+offset_left = 175.061
+offset_top = 924.928
+offset_right = 233.061
+offset_bottom = 955.928
+scale = Vector2(2.92665, 2.92665)
+text = "Action"
+
+[node name="Button Action 4" type="Button" parent="Character5"]
+offset_left = 157.141
+offset_top = 1075.18
+offset_right = 228.141
+offset_bottom = 1106.18
+scale = Vector2(2.92665, 2.92665)
+text = "Action 2"
 
 [node name="Inventory" type="Node2D" parent="."]
 position = Vector2(1152, 390)
@@ -167,6 +252,19 @@ texture = ExtResource("5_l0xcf")
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_4dpvv")
 
+[node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Character/Button Action 1" to="Character" method="_on_button_pressed"]
+[connection signal="pressed" from="Character/Button Action 2" to="Character" method="_on_button_action_2_pressed"]
+[connection signal="pressed" from="Character2/Button Action 1" to="Character2" method="_on_button_pressed"]
+[connection signal="pressed" from="Character2/Button Action 2" to="Character2" method="_on_button_action_2_pressed"]
+[connection signal="pressed" from="Character3/Button Action 1" to="Character3" method="_on_button_pressed"]
+[connection signal="pressed" from="Character3/Button Action 2" to="Character3" method="_on_button_action_2_pressed"]
+[connection signal="pressed" from="Character4/Button Action 1" to="Character4" method="_on_button_pressed"]
+[connection signal="pressed" from="Character4/Button Action 2" to="Character4" method="_on_button_action_2_pressed"]
+[connection signal="pressed" from="Character5/Button Action 3" to="Character5" method="_on_button_pressed"]
+[connection signal="pressed" from="Character5/Button Action 4" to="Character5" method="_on_button_action_2_pressed"]
 [connection signal="body_entered" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_mouse_entered"]

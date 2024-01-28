@@ -2,9 +2,7 @@ extends Node
 
 enum DraggableType {
 	NONE,
-	GODOT_HAT,
-	UNITY_HAT,
-	UNREAL_HAT
+	MOUSE_MASK
 }
 
 var is_dragging = false

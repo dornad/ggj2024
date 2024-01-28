@@ -7,7 +7,7 @@ var offset: Vector2
 var initialPos: Vector2
 
 # What kind of draggable this is.
-@export var draggableType: global.DraggableType = global.DraggableType.GODOT_HAT
+@export var draggableType: global.DraggableType = global.DraggableType.MOUSE_MASK
 
 func _process(_delta):
 	if draggable:
@@ -39,10 +39,7 @@ func handleDrop(body: StaticBody2D):
 func handleDrop_character(body: StaticBody2D, character: Character):
 	if character.firstItem == global.DraggableType.NONE:
 		character.firstItem = draggableType
-	else:
-		character.secondItem = draggableType
 	print(character, ", firstItem = ", global.DraggableType.keys()[character.firstItem])
-	print(character, ", secondItem = ", global.DraggableType.keys()[character.secondItem])
 	
 func draggable_cleanup():
 	print("CLEANUP START")
@@ -51,10 +48,7 @@ func draggable_cleanup():
 	for character in characters:
 		if character.firstItem == draggableType:
 			character.firstItem = global.DraggableType.NONE
-		if character.secondItem == draggableType:
-			character.secondItem = global.DraggableType.NONE
 		print(character, ", firstItem = ", global.DraggableType.keys()[character.firstItem])
-		print(character, ", secondItem = ", global.DraggableType.keys()[character.secondItem])
 	print("CLEANUP END")
 
 func _on_area_2d_mouse_entered():
