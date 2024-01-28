@@ -9,7 +9,7 @@ class_name Character
 @export var mask_voice: Resource = load("res://Assets/Audio/deep_voice_Robbing.wav")
 @export var pain_voice: Resource = load("res://Assets/Audio/deep_voice_Robbing.wav")
 
-var is_guessing_guilty: bool
+var is_guessing_guilty: bool = false
 
 func _on_button_pressed():
 	if firstItem == global.DraggableType.NONE:

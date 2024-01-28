@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=16 format=3 uid="uid://b806padjpiciv"]
 
 [ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="2_7lcpd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://fa6j63lg5vm8" path="res://Assets/Mechanic_ transparent.png" id="6_irn4i"]
 [ext_resource type="Texture2D" uid="uid://dfsqc6opwa2in" path="res://Assets/Teacher_Transparent.png" id="7_y0v0n"]
 [ext_resource type="Texture2D" uid="uid://cey8ci26bftbj" path="res://Assets/yakuza guy_transparent.png" id="8_7na4d"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="13_o0apk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mucmf"]
 size = Vector2(129, 130)
@@ -30,6 +31,7 @@ texture = ExtResource("1_0r6ef")
 position = Vector2(108, 167)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
+is_guilty = true
 normal_voice = ExtResource("3_dg6ly")
 mask_voice = ExtResource("4_vaiej")
 pain_voice = ExtResource("4_vaiej")
@@ -266,6 +268,17 @@ shape = SubResource("RectangleShape2D_4dpvv")
 [node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 
+[node name="Game" type="Node2D" parent="."]
+position = Vector2(1667, 937)
+script = ExtResource("13_o0apk")
+
+[node name="Button" type="Button" parent="Game"]
+offset_right = 106.0
+offset_bottom = 50.0
+scale = Vector2(1.94664, 1.94664)
+text = "GUESS
+"
+
 [connection signal="pressed" from="Character/Button Action 1" to="Character" method="_on_button_pressed"]
 [connection signal="pressed" from="Character/Button Action 2" to="Character" method="_on_button_action_2_pressed"]
 [connection signal="toggled" from="Character/CheckButton" to="Character" method="_on_check_button_toggled"]
@@ -281,3 +294,4 @@ unique_name_in_owner = true
 [connection signal="body_exited" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Game/Button" to="Game" method="_on_button_pressed"]
