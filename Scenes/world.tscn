@@ -118,6 +118,16 @@ offset_bottom = 1040.01
 scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
 
+[node name="CheckButton2" type="CheckButton" parent="Character2"]
+offset_left = -267.416
+offset_top = 754.002
+offset_right = -158.416
+offset_bottom = 785.002
+scale = Vector2(2.69159, 2.97578)
+text = "Guilty"
+alignment = 1
+text_overrun_behavior = 3
+
 [node name="Character3" type="Node2D" parent="."]
 position = Vector2(1149, 173)
 scale = Vector2(0.675813, 0.675813)
@@ -156,6 +166,16 @@ offset_right = 581.496
 offset_bottom = 1063.83
 scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
+
+[node name="CheckButton3" type="CheckButton" parent="Character3"]
+offset_left = 460.186
+offset_top = 776.842
+offset_right = 569.186
+offset_bottom = 807.842
+scale = Vector2(2.69159, 2.97578)
+text = "Guilty"
+alignment = 1
+text_overrun_behavior = 3
 
 [node name="Character4" type="Node2D" parent="."]
 position = Vector2(761, 111)
@@ -196,6 +216,16 @@ offset_bottom = 1067.58
 scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
 
+[node name="CheckButton4" type="CheckButton" parent="Character4"]
+offset_left = 110.274
+offset_top = 785.706
+offset_right = 219.274
+offset_bottom = 816.706
+scale = Vector2(2.69159, 2.97578)
+text = "Guilty"
+alignment = 1
+text_overrun_behavior = 3
+
 [node name="Character5" type="Node2D" parent="."]
 position = Vector2(1055, 102)
 scale = Vector2(0.725462, 0.725462)
@@ -234,6 +264,16 @@ offset_right = 228.141
 offset_bottom = 1106.18
 scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
+
+[node name="CheckButton5" type="CheckButton" parent="Character5"]
+offset_left = 96.4902
+offset_top = 811.896
+offset_right = 205.49
+offset_bottom = 842.896
+scale = Vector2(2.69159, 2.97578)
+text = "Guilty"
+alignment = 1
+text_overrun_behavior = 3
 
 [node name="Inventory" type="Node2D" parent="."]
 position = Vector2(1314, -357)
@@ -284,12 +324,16 @@ text = "GUESS
 [connection signal="toggled" from="Character/CheckButton" to="Character" method="_on_check_button_toggled"]
 [connection signal="pressed" from="Character2/Button Action 1" to="Character2" method="_on_button_pressed"]
 [connection signal="pressed" from="Character2/Button Action 2" to="Character2" method="_on_button_action_2_pressed"]
+[connection signal="toggled" from="Character2/CheckButton2" to="Character2" method="_on_check_button_toggled"]
 [connection signal="pressed" from="Character3/Button Action 1" to="Character3" method="_on_button_pressed"]
 [connection signal="pressed" from="Character3/Button Action 2" to="Character3" method="_on_button_action_2_pressed"]
+[connection signal="toggled" from="Character3/CheckButton3" to="Character3" method="_on_check_button_toggled"]
 [connection signal="pressed" from="Character4/Button Action 1" to="Character4" method="_on_button_pressed"]
 [connection signal="pressed" from="Character4/Button Action 2" to="Character4" method="_on_button_action_2_pressed"]
+[connection signal="toggled" from="Character4/CheckButton4" to="Character4" method="_on_check_button_toggled"]
 [connection signal="pressed" from="Character5/Button Action 3" to="Character5" method="_on_button_pressed"]
 [connection signal="pressed" from="Character5/Button Action 4" to="Character5" method="_on_button_action_2_pressed"]
+[connection signal="toggled" from="Character5/CheckButton5" to="Character5" method="_on_check_button_toggled"]
 [connection signal="body_entered" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Draggable/Area2D" to="Draggable" method="_on_area_2d_mouse_entered"]
