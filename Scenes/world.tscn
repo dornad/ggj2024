@@ -67,10 +67,21 @@ offset_bottom = 1023.47
 scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
 
+[node name="CheckButton" type="CheckButton" parent="Character"]
+offset_left = 130.951
+offset_top = 726.434
+offset_right = 239.951
+offset_bottom = 757.434
+scale = Vector2(2.69159, 2.97578)
+text = "Guilty"
+alignment = 1
+text_overrun_behavior = 3
+
 [node name="Character2" type="Node2D" parent="."]
 position = Vector2(700, 127)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
+is_guilty = true
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character2"]
 position = Vector2(-119.924, 650.62)
@@ -223,7 +234,7 @@ scale = Vector2(2.92665, 2.92665)
 text = "Action 2"
 
 [node name="Inventory" type="Node2D" parent="."]
-position = Vector2(1152, 390)
+position = Vector2(1314, -357)
 scale = Vector2(1.555, 1.5)
 
 [node name="DragAndDropArea" type="StaticBody2D" parent="Inventory" groups=["droppable"]]
@@ -240,7 +251,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="Draggable" type="Node2D" parent="."]
-position = Vector2(1600, 900)
+position = Vector2(1773, 143)
 script = ExtResource("4_nctbg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable"]
@@ -257,6 +268,7 @@ unique_name_in_owner = true
 
 [connection signal="pressed" from="Character/Button Action 1" to="Character" method="_on_button_pressed"]
 [connection signal="pressed" from="Character/Button Action 2" to="Character" method="_on_button_action_2_pressed"]
+[connection signal="toggled" from="Character/CheckButton" to="Character" method="_on_check_button_toggled"]
 [connection signal="pressed" from="Character2/Button Action 1" to="Character2" method="_on_button_pressed"]
 [connection signal="pressed" from="Character2/Button Action 2" to="Character2" method="_on_button_action_2_pressed"]
 [connection signal="pressed" from="Character3/Button Action 1" to="Character3" method="_on_button_pressed"]
