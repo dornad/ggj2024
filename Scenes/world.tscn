@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=9 format=3 uid="uid://b806padjpiciv"]
 
 [ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
 [ext_resource type="Texture2D" uid="uid://c8uwdn1dgvyob" path="res://Assets/character_placeholder.png" id="2_1at67"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="2_7lcpd"]
 [ext_resource type="Script" path="res://Scripts/DragAndDropArea.gd" id="3_kr7bl"]
 [ext_resource type="Script" path="res://Scripts/Draggable.gd" id="4_nctbg"]
 [ext_resource type="Texture2D" uid="uid://b3w2y0wtg3eg5" path="res://icon.svg" id="5_l0xcf"]
@@ -19,18 +20,59 @@ position = Vector2(963.558, 541.613)
 scale = Vector2(1.24537, 1.04958)
 texture = ExtResource("1_0r6ef")
 
-[node name="CharacterPlaceholder" type="Sprite2D" parent="."]
+[node name="Character" type="Node2D" parent="."]
+script = ExtResource("2_7lcpd")
+
+[node name="CharacterPlaceholder" type="Sprite2D" parent="Character"]
 position = Vector2(299, 648)
 texture = ExtResource("2_1at67")
 
-[node name="DragAndDropArea" type="StaticBody2D" parent="." groups=["droppable"]]
+[node name="DragAndDropArea" type="StaticBody2D" parent="Character" groups=["droppable"]]
 position = Vector2(291, 335)
 script = ExtResource("3_kr7bl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DragAndDropArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/DragAndDropArea"]
 shape = SubResource("RectangleShape2D_mucmf")
 
-[node name="ColorRect" type="ColorRect" parent="DragAndDropArea"]
+[node name="ColorRect" type="ColorRect" parent="Character/DragAndDropArea"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Character2" type="Node2D" parent="."]
+position = Vector2(911, -147)
+script = ExtResource("2_7lcpd")
+
+[node name="CharacterPlaceholder" type="Sprite2D" parent="Character2"]
+position = Vector2(299, 648)
+texture = ExtResource("2_1at67")
+
+[node name="DragAndDropArea" type="StaticBody2D" parent="Character2" groups=["droppable"]]
+position = Vector2(291, 335)
+script = ExtResource("3_kr7bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character2/DragAndDropArea"]
+shape = SubResource("RectangleShape2D_mucmf")
+
+[node name="ColorRect" type="ColorRect" parent="Character2/DragAndDropArea"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Inventory" type="Node2D" parent="."]
+position = Vector2(1152, 390)
+scale = Vector2(1.555, 1.5)
+
+[node name="DragAndDropArea" type="StaticBody2D" parent="Inventory" groups=["droppable"]]
+position = Vector2(291, 335)
+script = ExtResource("3_kr7bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inventory/DragAndDropArea"]
+shape = SubResource("RectangleShape2D_mucmf")
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/DragAndDropArea"]
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0

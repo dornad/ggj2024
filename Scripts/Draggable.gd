@@ -6,6 +6,9 @@ var body_ref
 var offset: Vector2
 var initialPos: Vector2
 
+# What kind of draggable this is.
+@export var draggableType: global.DraggableType = global.DraggableType.GODOT_HAT
+
 func _process(_delta):
 	if draggable:
 		if Input.is_action_just_pressed('click'):
@@ -18,9 +21,41 @@ func _process(_delta):
 			global.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				handleDrop(body_ref)
+				tween.tween_property(self, "position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
+
+func handleDrop(body: StaticBody2D):
+	# start by protecting our invariant regarding who has elements
+	draggable_cleanup()
+	
+	# Either we're dropping in a character or the inventory
+	var character = body.get_parent() as Character
+	if character is Character:
+		# add the element
+		handleDrop_character(body, character)
+
+func handleDrop_character(body: StaticBody2D, character: Character):
+	if character.firstItem == global.DraggableType.NONE:
+		character.firstItem = draggableType
+	else:
+		character.secondItem = draggableType
+	print(character, ", firstItem = ", global.DraggableType.keys()[character.firstItem])
+	print(character, ", secondItem = ", global.DraggableType.keys()[character.secondItem])
+	
+func draggable_cleanup():
+	print("CLEANUP START")
+	var world = find_parent("World")
+	var characters = world.find_children("Character*", "Character")
+	for character in characters:
+		if character.firstItem == draggableType:
+			character.firstItem = global.DraggableType.NONE
+		if character.secondItem == draggableType:
+			character.secondItem = global.DraggableType.NONE
+		print(character, ", firstItem = ", global.DraggableType.keys()[character.firstItem])
+		print(character, ", secondItem = ", global.DraggableType.keys()[character.secondItem])
+	print("CLEANUP END")
 
 func _on_area_2d_mouse_entered():
 	if not global.is_dragging:
