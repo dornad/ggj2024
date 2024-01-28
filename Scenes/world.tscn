@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=13 format=3 uid="uid://b806padjpiciv"]
 
 [ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
-[ext_resource type="Texture2D" uid="uid://c8uwdn1dgvyob" path="res://Assets/character_placeholder.png" id="2_1at67"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="2_7lcpd"]
 [ext_resource type="Script" path="res://Scripts/DragAndDropArea.gd" id="3_kr7bl"]
+[ext_resource type="Texture2D" uid="uid://cq4v3q8rclne0" path="res://Assets/Bus driver_Transparent.png" id="3_xgl8w"]
 [ext_resource type="Script" path="res://Scripts/Draggable.gd" id="4_nctbg"]
+[ext_resource type="Texture2D" uid="uid://dl6tm6lls3ive" path="res://Assets/Executive 2_transparent.png" id="5_0splw"]
 [ext_resource type="Texture2D" uid="uid://b3w2y0wtg3eg5" path="res://icon.svg" id="5_l0xcf"]
+[ext_resource type="Texture2D" uid="uid://fa6j63lg5vm8" path="res://Assets/Mechanic_ transparent.png" id="6_irn4i"]
+[ext_resource type="Texture2D" uid="uid://dfsqc6opwa2in" path="res://Assets/Teacher_Transparent.png" id="7_y0v0n"]
+[ext_resource type="Texture2D" uid="uid://cey8ci26bftbj" path="res://Assets/yakuza guy_transparent.png" id="8_7na4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mucmf"]
 size = Vector2(129, 130)
@@ -21,14 +25,16 @@ scale = Vector2(1.24537, 1.04958)
 texture = ExtResource("1_0r6ef")
 
 [node name="Character" type="Node2D" parent="."]
+position = Vector2(108, 167)
+scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
 
-[node name="CharacterPlaceholder" type="Sprite2D" parent="Character"]
+[node name="CharacterSprite" type="Sprite2D" parent="Character"]
 position = Vector2(299, 648)
-texture = ExtResource("2_1at67")
+texture = ExtResource("3_xgl8w")
 
 [node name="DragAndDropArea" type="StaticBody2D" parent="Character" groups=["droppable"]]
-position = Vector2(291, 335)
+position = Vector2(270.173, 162.655)
 script = ExtResource("3_kr7bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/DragAndDropArea"]
@@ -41,21 +47,91 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="Character2" type="Node2D" parent="."]
-position = Vector2(911, -147)
+position = Vector2(700, 127)
+scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
 
-[node name="CharacterPlaceholder" type="Sprite2D" parent="Character2"]
-position = Vector2(299, 648)
-texture = ExtResource("2_1at67")
+[node name="CharacterSprite" type="Sprite2D" parent="Character2"]
+position = Vector2(-119.924, 650.62)
+texture = ExtResource("5_0splw")
 
 [node name="DragAndDropArea" type="StaticBody2D" parent="Character2" groups=["droppable"]]
-position = Vector2(291, 335)
+position = Vector2(-122.681, 164.033)
 script = ExtResource("3_kr7bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character2/DragAndDropArea"]
 shape = SubResource("RectangleShape2D_mucmf")
 
 [node name="ColorRect" type="ColorRect" parent="Character2/DragAndDropArea"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Character3" type="Node2D" parent="."]
+position = Vector2(1149, 173)
+scale = Vector2(0.675813, 0.675813)
+script = ExtResource("2_7lcpd")
+
+[node name="CharacterSprite" type="Sprite2D" parent="Character3"]
+position = Vector2(624.43, 689.216)
+scale = Vector2(1.5592, 1.5592)
+texture = ExtResource("6_irn4i")
+
+[node name="DragAndDropArea" type="StaticBody2D" parent="Character3" groups=["droppable"]]
+position = Vector2(624.43, 180.575)
+script = ExtResource("3_kr7bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character3/DragAndDropArea"]
+shape = SubResource("RectangleShape2D_mucmf")
+
+[node name="ColorRect" type="ColorRect" parent="Character3/DragAndDropArea"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Character4" type="Node2D" parent="."]
+position = Vector2(761, 111)
+scale = Vector2(0.725462, 0.725462)
+script = ExtResource("2_7lcpd")
+
+[node name="CharacterSprite" type="Sprite2D" parent="Character4"]
+position = Vector2(256.388, 704.379)
+scale = Vector2(0.938989, 0.938989)
+texture = ExtResource("7_y0v0n")
+
+[node name="DragAndDropArea" type="StaticBody2D" parent="Character4" groups=["droppable"]]
+position = Vector2(275.686, 249.496)
+script = ExtResource("3_kr7bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character4/DragAndDropArea"]
+shape = SubResource("RectangleShape2D_mucmf")
+
+[node name="ColorRect" type="ColorRect" parent="Character4/DragAndDropArea"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Character5" type="Node2D" parent="."]
+position = Vector2(1055, 102)
+scale = Vector2(0.725462, 0.725462)
+script = ExtResource("2_7lcpd")
+
+[node name="CharacterSprite" type="Sprite2D" parent="Character5"]
+position = Vector2(317.039, 773.301)
+scale = Vector2(1.3572, 1.3572)
+texture = ExtResource("8_7na4d")
+
+[node name="DragAndDropArea" type="StaticBody2D" parent="Character5" groups=["droppable"]]
+position = Vector2(275.686, 249.496)
+script = ExtResource("3_kr7bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character5/DragAndDropArea"]
+shape = SubResource("RectangleShape2D_mucmf")
+
+[node name="ColorRect" type="ColorRect" parent="Character5/DragAndDropArea"]
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
