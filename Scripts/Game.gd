@@ -11,19 +11,6 @@ func _on_button_pressed():
 			isSuccess = true
 	
 	if isSuccess:
-		alert("GREAT JOB!")
+		OS.alert("GREAT JOB!")
 	else:
-		alert("THAT IS NOT IT... try again")
-
-func alert(text: String, title: String = ""):
-	var dialog = AcceptDialog.new()
-	dialog.dialog_text = text
-	dialog.title = title
-	#dialog.connect('modal_closed', dialog, 'queue_free')
-	
-	add_child(dialog)
-	
-	dialog.popup_centered()
-	
-	
-	
+		OS.alert("THAT IS NOT IT... try again")
