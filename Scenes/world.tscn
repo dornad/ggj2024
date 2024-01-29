@@ -1,18 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://b806padjpiciv"]
+[gd_scene load_steps=26 format=3 uid="uid://b806padjpiciv"]
 
 [ext_resource type="Texture2D" uid="uid://coiy2shc7nxld" path="res://Assets/police_lineup_room_AI1.png" id="1_0r6ef"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="2_7lcpd"]
 [ext_resource type="AudioStream" uid="uid://dc4wvymlx7fb3" path="res://Assets/Audio/deep_voice_Robbing.wav" id="3_dg6ly"]
 [ext_resource type="Script" path="res://Scripts/DragAndDropArea.gd" id="3_kr7bl"]
 [ext_resource type="Texture2D" uid="uid://cq4v3q8rclne0" path="res://Assets/Bus driver_Transparent.png" id="3_xgl8w"]
+[ext_resource type="AudioStream" uid="uid://yafppcn6qkan" path="res://Assets/Audio/Cartoon voice_Robbing.wav" id="4_3k2x5"]
 [ext_resource type="Script" path="res://Scripts/Draggable.gd" id="4_nctbg"]
 [ext_resource type="AudioStream" uid="uid://0nu4sll4njqx" path="res://Assets/Audio/Mickey_Robbed.wav" id="4_vaiej"]
 [ext_resource type="Texture2D" uid="uid://dl6tm6lls3ive" path="res://Assets/Executive 2_transparent.png" id="5_0splw"]
-[ext_resource type="Texture2D" uid="uid://b3w2y0wtg3eg5" path="res://icon.svg" id="5_l0xcf"]
+[ext_resource type="AudioStream" uid="uid://dmcmqi87ogsjw" path="res://Assets/Audio/pain/262279__dirtjm__grunts-male.wav" id="5_1lsot"]
 [ext_resource type="Texture2D" uid="uid://fa6j63lg5vm8" path="res://Assets/Mechanic_ transparent.png" id="6_irn4i"]
 [ext_resource type="Texture2D" uid="uid://dfsqc6opwa2in" path="res://Assets/Teacher_Transparent.png" id="7_y0v0n"]
 [ext_resource type="Texture2D" uid="uid://cey8ci26bftbj" path="res://Assets/yakuza guy_transparent.png" id="8_7na4d"]
+[ext_resource type="AudioStream" uid="uid://qaejwcc4r4d4" path="res://Assets/Audio/voice_2_Robbing.wav" id="8_r3rfi"]
+[ext_resource type="AudioStream" uid="uid://cx2pf8o4nlbeu" path="res://Assets/Audio/pain/(CULPRIT) 338936__natemarler__human-male-scream-agony.wav" id="10_g2dbj"]
+[ext_resource type="Texture2D" uid="uid://b538dg7025lwf" path="res://Assets/willie mask 2.png" id="12_586gw"]
+[ext_resource type="AudioStream" uid="uid://bqe2ag4i7b357" path="res://Assets/Audio/voice_3_Robbing.wav" id="12_bt5ed"]
+[ext_resource type="AudioStream" uid="uid://rbau8tysttfr" path="res://Assets/Audio/yoda_voice_Robbing.wav" id="13_78qo2"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="13_o0apk"]
+[ext_resource type="AudioStream" uid="uid://i4qaocllwmlu" path="res://Assets/Audio/pain/547193__mrfossy__voice_adultmale_paingrunts_14.wav" id="14_1w6ci"]
+[ext_resource type="AudioStream" uid="uid://b8o3e5ef0c7m3" path="res://Assets/Audio/goofy_Robbing.wav" id="16_x0vkj"]
+[ext_resource type="Texture2D" uid="uid://ce8rleuogchtv" path="res://Assets/witness shorter.png" id="22_g7m5y"]
+[ext_resource type="Texture2D" uid="uid://duiq34wxjxeo6" path="res://Assets/Cuadro blanco.png" id="23_de4v8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mucmf"]
 size = Vector2(129, 130)
@@ -31,10 +41,9 @@ texture = ExtResource("1_0r6ef")
 position = Vector2(108, 167)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
-is_guilty = true
 normal_voice = ExtResource("3_dg6ly")
-mask_voice = ExtResource("4_vaiej")
-pain_voice = ExtResource("4_vaiej")
+mask_voice = ExtResource("4_3k2x5")
+pain_voice = ExtResource("5_1lsot")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character"]
 position = Vector2(299, 648)
@@ -59,7 +68,7 @@ offset_top = 844.979
 offset_right = 256.494
 offset_bottom = 875.979
 scale = Vector2(2.92665, 2.92665)
-text = "Action"
+text = "Talk"
 
 [node name="Button Action 2" type="Button" parent="Character"]
 offset_left = 184.71
@@ -67,7 +76,7 @@ offset_top = 992.471
 offset_right = 255.71
 offset_bottom = 1023.47
 scale = Vector2(2.92665, 2.92665)
-text = "Action 2"
+text = "Kicked"
 
 [node name="CheckButton" type="CheckButton" parent="Character"]
 offset_left = 130.951
@@ -84,6 +93,9 @@ position = Vector2(700, 127)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
 is_guilty = true
+normal_voice = ExtResource("8_r3rfi")
+mask_voice = ExtResource("4_vaiej")
+pain_voice = ExtResource("10_g2dbj")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character2"]
 position = Vector2(-119.924, 650.62)
@@ -108,7 +120,7 @@ offset_top = 858.763
 offset_right = -162.549
 offset_bottom = 889.763
 scale = Vector2(2.92665, 2.92665)
-text = "Action"
+text = "Talk"
 
 [node name="Button Action 2" type="Button" parent="Character2"]
 offset_left = -238.469
@@ -116,7 +128,7 @@ offset_top = 1009.01
 offset_right = -167.469
 offset_bottom = 1040.01
 scale = Vector2(2.92665, 2.92665)
-text = "Action 2"
+text = "Kicked"
 
 [node name="CheckButton2" type="CheckButton" parent="Character2"]
 offset_left = -267.416
@@ -132,6 +144,9 @@ text_overrun_behavior = 3
 position = Vector2(1149, 173)
 scale = Vector2(0.675813, 0.675813)
 script = ExtResource("2_7lcpd")
+normal_voice = ExtResource("12_bt5ed")
+mask_voice = ExtResource("13_78qo2")
+pain_voice = ExtResource("14_1w6ci")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character3"]
 position = Vector2(624.43, 689.216)
@@ -157,7 +172,7 @@ offset_top = 904.096
 offset_right = 587.732
 offset_bottom = 935.096
 scale = Vector2(2.92665, 2.92665)
-text = "Action"
+text = "Talk"
 
 [node name="Button Action 2" type="Button" parent="Character3"]
 offset_left = 510.496
@@ -165,7 +180,7 @@ offset_top = 1032.83
 offset_right = 581.496
 offset_bottom = 1063.83
 scale = Vector2(2.92665, 2.92665)
-text = "Action 2"
+text = "Kicked"
 
 [node name="CheckButton3" type="CheckButton" parent="Character3"]
 offset_left = 460.186
@@ -181,6 +196,9 @@ text_overrun_behavior = 3
 position = Vector2(761, 111)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
+normal_voice = ExtResource("3_dg6ly")
+mask_voice = ExtResource("16_x0vkj")
+pain_voice = ExtResource("10_g2dbj")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character4"]
 position = Vector2(256.388, 704.379)
@@ -206,7 +224,7 @@ offset_top = 886.332
 offset_right = 239.953
 offset_bottom = 917.332
 scale = Vector2(2.92665, 2.92665)
-text = "Action"
+text = "Talk"
 
 [node name="Button Action 2" type="Button" parent="Character4"]
 offset_left = 164.034
@@ -214,7 +232,7 @@ offset_top = 1036.58
 offset_right = 235.034
 offset_bottom = 1067.58
 scale = Vector2(2.92665, 2.92665)
-text = "Action 2"
+text = "Kicked"
 
 [node name="CheckButton4" type="CheckButton" parent="Character4"]
 offset_left = 110.274
@@ -230,6 +248,9 @@ text_overrun_behavior = 3
 position = Vector2(1055, 102)
 scale = Vector2(0.725462, 0.725462)
 script = ExtResource("2_7lcpd")
+normal_voice = ExtResource("8_r3rfi")
+mask_voice = ExtResource("4_vaiej")
+pain_voice = ExtResource("14_1w6ci")
 
 [node name="CharacterSprite" type="Sprite2D" parent="Character5"]
 position = Vector2(317.039, 773.301)
@@ -255,7 +276,7 @@ offset_top = 924.928
 offset_right = 233.061
 offset_bottom = 955.928
 scale = Vector2(2.92665, 2.92665)
-text = "Action"
+text = "Talk"
 
 [node name="Button Action 4" type="Button" parent="Character5"]
 offset_left = 157.141
@@ -263,7 +284,7 @@ offset_top = 1075.18
 offset_right = 228.141
 offset_bottom = 1106.18
 scale = Vector2(2.92665, 2.92665)
-text = "Action 2"
+text = "Kicked"
 
 [node name="CheckButton5" type="CheckButton" parent="Character5"]
 offset_left = 96.4902
@@ -297,7 +318,8 @@ position = Vector2(1773, 143)
 script = ExtResource("4_nctbg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable"]
-texture = ExtResource("5_l0xcf")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_586gw")
 
 [node name="Area2D" type="Area2D" parent="Draggable"]
 
@@ -316,8 +338,32 @@ script = ExtResource("13_o0apk")
 offset_right = 106.0
 offset_bottom = 50.0
 scale = Vector2(1.94664, 1.94664)
-text = "GUESS
+text = "ACUSE
 "
+
+[node name="Witness" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Witness"]
+position = Vector2(130, 90)
+scale = Vector2(0.237752, 0.237752)
+texture = ExtResource("22_g7m5y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Witness"]
+position = Vector2(920.5, 90)
+scale = Vector2(1.67375, 0.283333)
+texture = ExtResource("23_de4v8")
+
+[node name="Label" type="Label" parent="Witness"]
+offset_left = 300.0
+offset_right = 1500.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+text = "I was robbed by a man in a cartoon costume
+He said hello and threatened me in a very pitched voice
+A kid came and kicked him in the leg, it was very painful to him"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Character/Button Action 1" to="Character" method="_on_button_pressed"]
 [connection signal="pressed" from="Character/Button Action 2" to="Character" method="_on_button_action_2_pressed"]
